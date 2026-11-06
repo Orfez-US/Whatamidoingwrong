@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildstep: Creature Collector RPG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hud">
+        <div class="brand">
+          <div class="logo">W</div>
+          <div>
+            <h1>Wildstep</h1>
+            <small>Creature Collector RPG</small>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="chip"><span>Coins</span><strong id="coinsStat">0</strong></div>
+          <div class="chip"><span>Orbs</span><strong id="orbsStat">0</strong></div>
+          <div class="chip"><span>Quests</span><strong id="questStat">0</strong></div>
+          <div class="chip"><span>Dex</span><strong id="dexStat">0/180</strong></div>
+        </div>
+      </header>
+
+      <main class="game-wrap">
+        <canvas id="gameCanvas" width="960" height="600"></canvas>
+
+        <aside class="side-panel">
+          <section class="panel log-panel">
+            <h2>Field Journal</h2>
+            <div id="logBox" class="log-box"></div>
+          </section>
+
+          <section class="panel actions-panel">
+            <h2>Actions</h2>
+            <div class="button-grid">
+              <button data-action="attack">Strike</button>
+              <button data-action="guard">Guard</button>
+              <button data-action="capture">Capture</button>
+              <button data-action="switch">Swap</button>
+              <button data-action="scan">Scan</button>
+              <button data-action="travel">Travel</button>
+            </div>
+          </section>
+
+          <section class="panel dex-panel">
+            <h2>Bestiary</h2>
+            <div id="dexList" class="dex-list"></div>
+          </section>
+        </aside>
+      </main>
+
+      <footer class="bottom-bar">
+        <div class="mission">
+          <span>Objective</span>
+          <strong id="objectiveText">Find a partner creature in the Grove</strong>
+        </div>
+        <div class="team-wrap">
+          <div id="teamDisplay" class="team-display"></div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="modal">
+        <h2 id="modalTitle">Wildstep</h2>
+        <p id="modalText">Welcome to the wilds.</p>
+        <div id="modalButtons" class="modal-buttons"></div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
