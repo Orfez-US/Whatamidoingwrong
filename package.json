@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "python3 -m http.server 3000 --directory .",
-    "dev": "python3 -m http.server 3000 --directory ."
+    "build": "node scripts/build.mjs",
+    "start": "python3 -m http.server ${PORT:-3000} --bind 0.0.0.0 --directory dist"
   }
 }
